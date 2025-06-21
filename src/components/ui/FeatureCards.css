@@ -1,7 +1,11 @@
+/* Global box-sizing */
+
+
+/* Section */
 .feature-cards-section {
   position: relative;
   background-color: white;
-  padding: 60px 20px;
+  padding: 60px 0; /* No horizontal padding */
   overflow: hidden;
 }
 
@@ -20,13 +24,16 @@
   z-index: 0;
 }
 
+/* Main Container */
 .feature-cards-container {
   position: relative;
   max-width: 1200px;
+  padding: 0 80px; /* Horizontal padding here */
   margin: 0 auto;
   z-index: 1;
 }
 
+/* Section Heading */
 .feature-cards-subtitle {
   font-size: 14px;
   font-weight: 600;
@@ -48,12 +55,14 @@
   margin-bottom: 32px;
 }
 
+/* Grid Layout */
 .feature-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
+/* Individual Card */
 .feature-card {
   background-color: white;
   border: 1px solid #e5e7eb;
