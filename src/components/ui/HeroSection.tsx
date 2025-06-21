@@ -1,40 +1,50 @@
 // components/ui/HeroSection.tsx
-"use client"
+"use client";
 
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
+import "./HeroSection.css"; // Make sure to create this CSS file
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-h-screen flex items-center bg-white">
-      {/* Left */}
-      <div className="w-full md:w-1/2 p-10 space-y-6 z-10">
-        <h1 className="text-5xl font-bold text-black">Lorem ipsum dolor<br />sit amet</h1>
-        <p className="text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+    <section className="hero-section">
+      {/* ======== Navbar ======== */}
+      <div className="navbar">
+        <div className="logo">LOGO</div>
+        <div className="nav-links">
+          <a href="#">Lorem Ipsum ▾</a>
+          <a href="#">Lorem Ipsum ▾</a>
+          <a href="#">Lorem Ipsum ▾</a>
+        </div>
+        <button className="sign-in-btn">Sign In</button>
+      </div>
+
+      {/* ======== Background Image Clipped ======== */}
+      <div className="clipped-image" />
+
+      {/* ======== Hero Content ======== */}
+      <div className="hero-content">
+        <h1 className="hero-heading">
+          Lorem ipsum dolor <br /> sit amet
+        </h1>
+
+        <p className="hero-description">
+          Lorem ipsum dolor sit amet consectetur. Enim netus cras congue quis elit sociis.
+          Sed mi rhoncus id habitant. In urna tellus nisi platea morbi libero imperdiet neque.
+          Justo suspendisse tristique posuere quis eget viverra. Nunc euismod ultrices etiam nulla habitasse.
         </p>
-        <div className="flex gap-3">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="h-12 px-4 border border-gray-300 rounded-md"
-          />
-          <button className="h-12 px-6 bg-blue-600 text-white rounded-md flex items-center gap-2">
+
+        <div className="form-row">
+          <input type="email" placeholder="Enter your email" className="email-input" />
+          <button className="submit-btn">
             Submit <ArrowRight size={16} />
           </button>
         </div>
-      </div>
 
-      {/* Right Image */}
-      <div className="hidden md:block relative w-1/2 h-full">
-        <Image
-          src="/images/hero.png"
-          alt="Hero"
-          fill
-          className="object-cover"
-          priority
-        />
+        <div className="info-text">
+          <div className="check-icon">✔</div>
+          No credit card required!
+        </div>
       </div>
     </section>
-  )
+  );
 }

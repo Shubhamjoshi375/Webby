@@ -14,25 +14,30 @@ import FeatureCards from "@/components/ui/FeatureCards"
 import Testimonial from "@/components/ui/Testimonial"
 import FAQ from "@/components/ui/FAQ"
 import Footer from "@/components/ui/Footer"
+import InfoSection from "@/components/ui/section"
+
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <About />
-      <FeatureSection />
-      <BannerCTA />
+       <About />
+
+     <InfoSection/> <FeatureCards />
+
+      {/* <BannerCTA />
       <Partners />
       <Cards />
+           <FeatureSection />
       <DarkCTA />
       <QuoteForm />
       <AppPromo />
       <Gallery />
-      <FeatureCards />
+     
       <Testimonial />
       <CTASection />
       <FAQ />
-      <Footer />
+      <Footer /> */}
     </main>
   )
 }

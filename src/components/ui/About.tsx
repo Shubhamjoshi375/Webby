@@ -1,42 +1,63 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import { PhoneCall, ArrowRight } from "lucide-react";
+import "./About.css";
 
-export default function AboutSection() {
+export default function About() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
-        {/* Left Text Content */}
-        <div className="md:w-1/2">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Lorem ipsum dolor sit amet</h2>
-          <p className="text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, molestias. Molestiae labore quam animi explicabo.
+    <section className="about-section">
+      <div className="about-container">
+        {/* Left Content */}
+        <div className="about-text">
+          <p className="about-subtitle">Lorem ipsum dolor sit</p>
+          <h2 className="about-heading">LOREM IPSUM DOLOR SIT AMET</h2>
+          <p className="about-description">
+            Lorem ipsum dolor sit amet consectetur. Amet sodales sociis facilisis donec dui.
+            Mi porttitor ut aliquam mattis maecenas eget integer in nam.
+            Non nisi iaculis at felis aliquet. Hendrerit tellus at purus lectus.
           </p>
-          <ul className="list-disc list-inside text-gray-600 mb-6">
-            <li>Lorem ipsum dolor sit</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Sed do eiusmod tempor</li>
-          </ul>
-          <Link
-            href="#"
-            className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
-          >
-            Read More
-          </Link>
+
+          {/* 3 Info Items */}
+          <div className="about-info-list">
+            {[
+              {
+                text: "Lorem ipsum dolor sit amet consectetur. Vestibulum ornare fermentum feugiat.",
+                src: "/images/about1.jpeg",
+              },
+              {
+                text: "Lorem ipsum dolor sit amet consectetur. Dictum at ac tellus faucibus urna ullamcorper id dui cursus. Venenatis.",
+                src: "/images/about2.jpeg",
+              },
+              {
+                text: "Lorem ipsum dolor sit amet consectetur. Vestibulum nisl morbi metus gravida eu facilisi enim. Ut diam auctor tortor tincidunt.",
+                src: "/images/about3.jpeg",
+              },
+            ].map((item, i) => (
+              <div key={i} className="about-info-item">
+                <Image src={item.src} alt="Info" width={80} height={80} className="about-img" />
+                <p className="about-info-text">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="about-cta">
+            <button className="about-button">
+              Loerum Ipsum <ArrowRight size={16} />
+            </button>
+            <div className="about-phone">
+              <PhoneCall size={18} />
+              <span>123456789</span>
+            </div>
+          </div>
         </div>
 
         {/* Right Image */}
-        <div className="md:w-1/2">
-          <Image
-            src="/images/bike.jpeg"
-            alt="About Bike"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-lg"
-          />
+        <div className="about-image">
+          <Image src="/images/about ri.jpeg" alt="Bikes" width={600} height={500} className="bike-img" />
         </div>
       </div>
     </section>
-  )
+  );
 }

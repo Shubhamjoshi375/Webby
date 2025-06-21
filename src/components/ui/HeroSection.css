@@ -1,0 +1,157 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 64px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #e5e7eb;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d4ed8;
+}
+
+.sign-in-btn {
+  background: white;
+  color: black;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.clipped-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background-image: url('/images/bike.jpeg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 20% 100%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 40%;
+  padding: 40px 64px;
+  margin-left: 32px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+}
+
+.hero-heading {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  line-height: 1.2;
+}
+
+.hero-description {
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.email-input {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.submit-btn {
+  height: 48px;
+  padding: 0 24px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #1e40af;
+}
+
+.info-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.check-icon {
+  width: 16px;
+  height: 16px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+  .clipped-image {
+    clip-path: none;
+    width: 100%;
+    position: relative;
+    height: 300px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 32px;
+    margin-left: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}

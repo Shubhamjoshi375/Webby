@@ -1,23 +1,52 @@
-"use client"
-import React from "react"
+// components/ui/FeatureCards.tsx
+"use client";
+
+import Image from "next/image";
+import "./FeatureCards.css";
 
 const features = [
-  { title: "Speed", desc: "Fast performance across the board." },
-  { title: "Security", desc: "Top-notch protection for your data." },
-  { title: "Support", desc: "24/7 customer support included." },
-]
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consectetur faucibus ultrices. Nisi. Nunc montes molestie et vitae suscipit neque. Phasellus in pulvinar vel vitae. Et velit lectus nec. Et. Liber laucuis diam nam mauris at eget. Com enim rhoncus enim venenatis bibendum.",
+    image: "/images/feature1.jpeg",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consectetur faucibus ultrices. Nisi. Nunc montes molestie et vitae suscipit neque. Phasellus in pulvinar vel vitae. Et velit lectus nec. Et. Liber laucuis diam nam mauris at eget. Com enim rhoncus enim venenatis bibendum.",
+    image: "/images/feature2.jpeg",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consectetur faucibus ultrices. Nisi. Nunc montes molestie et vitae suscipit neque. Phasellus in pulvinar vel vitae. Et velit lectus nec. Et. Liber laucuis diam nam mauris at eget. Com enim rhoncus enim venenatis bibendum.",
+    image: "/images/feature3.jpeg",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consectetur faucibus ultrices. Nisi. Nunc montes molestie et vitae suscipit neque. Phasellus in pulvinar vel vitae. Et velit lectus nec. Et. Liber laucuis diam nam mauris at eget. Com enim rhoncus enim venenatis bibendum.",
+    image: "/images/feature4.jpeg",
+  },
+];
 
 export default function FeatureCards() {
   return (
-    <section className="p-8 bg-gray-100">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {features.map((f, idx) => (
-          <div key={idx} className="bg-white rounded-xl p-6 shadow">
-            <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
-            <p>{f.desc}</p>
+    <section className="feature-section">
+      <p className="feature-subtitle">Lorem ipsum dolor sit amet</p>
+      <h2 className="feature-heading">LOREM IPSUM DOLOR SIT</h2>
+      <p className="feature-description">
+        Lorem ipsum dolor sit amet consectetur. Amet sodales sociis facilisis donec dui. Mi porttitor ut aliquam
+        mattis maecenas eget integer in nam. Non nisi iaculis at felis aliquet. Hendrerit tellus at purus lectus.
+      </p>
+
+      <div className="feature-cards-grid">
+        {features.map((feature, index) => (
+          <div key={index} className="feature-card">
+            <Image src={feature.image} alt="Feature" width={400} height={200} className="feature-img" />
+            <h3 className="feature-card-title">{feature.title}</h3>
+            <p className="feature-card-desc">{feature.desc}</p>
+            <a className="feature-link" href="#">Learn More</a>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }
